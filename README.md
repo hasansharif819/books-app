@@ -2,70 +2,70 @@
 ## A sleek, responsive, and fully interactive single-page application to explore books from the Gutendex API. Built with vanilla JavaScript and raw CSS, this project demonstrates clean UI design and advanced functionalities — all without any page reloads.
 
 # 🚀 Features
-Real-time Search: Instantly filter books by title with a dynamic search bar.
+* Real-time Search: Instantly filter books by title with a dynamic search bar.
 
-Genre Filter: Select from genres/topics using a dropdown to narrow down book choices.
+* Genre Filter: Select from genres/topics using a dropdown to narrow down book choices.
 
-Wishlist:
+## Wishlist:
 
-Mark/unmark books as favorites with a clickable heart icon.
+* Mark/unmark books as favorites with a clickable heart icon.
 
-Wishlist data persists in localStorage to keep your favorites safe across sessions.
+* Wishlist data persists in localStorage to keep your favorites safe across sessions.
 
-Pagination:
+## Pagination:
 
-Navigate through book pages using numbered pagination and previous/next controls.
+* Navigate through book pages using numbered pagination and previous/next controls.
 
-Smooth transitions ensure a pleasant browsing experience.
+* Smooth transitions ensure a pleasant browsing experience.
 
-Book Details:
+## Book Details:
 
-Dedicated page for each book displaying detailed info: title, author(s), cover image, genre(s), and ID.
+* Dedicated page for each book displaying detailed info: title, author(s), cover image, genre(s), and ID.
 
-Multi-page SPA:
+## Multi-page SPA:
 
-Home page with book list
+* Home page with book list
 
-Wishlist page showing only favorited books
+* Wishlist page showing only favorited books
 
-Individual book details page
-All pages update dynamically without full page reload.
+* Individual book details page
+* All pages update dynamically without full page reload.
 
-Responsive Design:
+## Responsive Design:
 
-Mobile-first layout with fluid grids and flexible components.
+* Mobile-first layout with fluid grids and flexible components.
 
-Works flawlessly on desktop, tablets, and smartphones.
+* Works flawlessly on desktop, tablets, and smartphones.
 
-Clean UI:
+## Clean UI:
 
-Minimalist, elegant design using raw CSS (styles.css).
+* Minimalist, elegant design using raw CSS (styles.css).
 
-No UI frameworks or templates — crafted from scratch.
+* No UI frameworks or templates — crafted from scratch.
 
-Persistence:
+## Persistence:
 
-Search queries and filter choices are saved to localStorage and restored on reload.
+* Search queries and filter choices are saved to localStorage and restored on reload.
 
-🛠️ Tech Stack
-Vanilla JavaScript (ES6+)
+# 🛠️ Tech Stack
+* Vanilla JavaScript (ES6+)
 
-Raw CSS (in styles.css)
+* Raw CSS (in styles.css)
 
-Gutendex API (https://gutendex.com) for book data
+* Gutendex API (https://gutendex.com) for book data
 
-HTML5, modern browser APIs
+* HTML5, modern browser APIs
 
-No frameworks or libraries, pure vanilla stack
+## No frameworks or libraries, pure vanilla stack
 
-📁 Project Structure
+## 📁 Project Structure
 ```bash
 /index.html       # Main entry point & SPA container
 /styles.css       # All raw CSS styles for layout & responsiveness
 /script.js       # Vanilla JS to handle UI, API calls, routing, state, and localStorage
 ```
 
-⚙️ How To Use
+## ⚙️ How To Use
 Clone the repository:
 
 ```bash
