@@ -127,7 +127,7 @@ Designed and developed from scratch by [Your Name] using only vanilla JS and CSS
 
 # 📬 Contact
 Have questions or feedback?
-Reach out: [hs.sharif819.com]
-GitHub: https://github.com/hasansharif819
+* Reach out: [hs.sharif819.com]
+* GitHub: https://github.com/hasansharif819
 
 # Thank you for checking out this project! Happy reading 📖✨
