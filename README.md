@@ -126,7 +126,7 @@ Powered by the Gutendex API — a free and open source project based on Project 
 Designed and developed from scratch by [Your Name] using only vanilla JS and CSS.
 
 # 📬 Contact
-Have questions or feedback?
+* Have questions or feedback?
 * Reach out: [hs.sharif819.com]
 * GitHub: https://github.com/hasansharif819
 
