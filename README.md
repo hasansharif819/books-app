@@ -123,7 +123,7 @@ Detailed view of selected book
 # 🙌 Credits
 Powered by the Gutendex API — a free and open source project based on Project Gutenberg data.
 
-Designed and developed from scratch by [Your Name] using only vanilla JS and CSS.
+Designed and developed from scratch by Sharif Hasan using only vanilla JS and CSS.
 
 # 📬 Contact
 * Have questions or feedback?
