@@ -2,13 +2,16 @@ const API_URL = "https://gutendex.com/books";
 let books = [];
 let currentPage = 1;
 let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+let currentKeyword = "";
 
-function fetchBooks(page = 1) {
-  fetch(`${API_URL}?page=${page}`)
+function fetchBooks(page = 1, keyword = "") {
+  const searchParam = keyword ? `&search=${encodeURIComponent(keyword)}` : "";
+  fetch(`${API_URL}?page=${page}${searchParam}`)
     .then((res) => res.json())
     .then((data) => {
       books = data.results;
       currentPage = page;
+      currentKeyword = keyword;
       updateGenreDropdown();
       renderBooks();
     });
@@ -27,13 +30,11 @@ function updateGenreDropdown() {
 }
 
 function renderBooks(list = books) {
-  const keyword = document.getElementById("search").value.toLowerCase();
   const genre = document.getElementById("genre-filter").value;
 
   const filtered = list.filter((book) => {
-    const matchTitle = book.title.toLowerCase().includes(keyword);
     const matchGenre = !genre || book.subjects?.includes(genre);
-    return matchTitle && matchGenre;
+    return matchGenre;
   });
 
   const view = document.getElementById("view");
@@ -63,11 +64,13 @@ function renderBooks(list = books) {
         .join("")}
     </div>
     <div class="pagination">
-      <button onclick="fetchBooks(${currentPage - 1})" ${
+      <button onclick="fetchBooks(${currentPage - 1}, '${currentKeyword}')" ${
     currentPage === 1 ? "disabled" : ""
   }>&laquo;</button>
       <button class="active">${currentPage}</button>
-      <button onclick="fetchBooks(${currentPage + 1})">&raquo;</button>
+      <button onclick="fetchBooks(${
+        currentPage + 1
+      }, '${currentKeyword}')">&raquo;</button>
     </div>
   `;
   view.innerHTML = html;
@@ -83,7 +86,9 @@ function toggleWishlist(id) {
 
 function navigate(view) {
   if (view === "home") {
-    fetchBooks(currentPage);
+    fetchBooks(1, ""); // Reset to all books
+    document.getElementById("search").value = "";
+    document.getElementById("genre-filter").value = "";
   } else if (view === "wishlist") {
     const wishlistBooks = books.filter((b) => wishlist.includes(b.id));
     renderBooks(wishlistBooks);
@@ -94,5 +99,15 @@ function goToDetails(id) {
   window.location.href = `details.html?id=${id}`;
 }
 
-// Load initial
-fetchBooks();
+function handleSearchInput() {
+  const keyword = document.getElementById("search").value.trim();
+  fetchBooks(1, keyword);
+}
+
+// Bind event listener to search input (on input)
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .getElementById("search")
+    .addEventListener("input", handleSearchInput);
+  fetchBooks(); // Initial load
+});
