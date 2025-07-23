@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -29,4 +29,42 @@
         <div id="view"></div>
     </div>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <strong><a href="#" onclick="navigate('home')">Book App</a></strong>
+      </div>
+      <div>
+        <a href="#" onclick="navigate('home')">Home</a>
+        <a href="#" onclick="navigate('wishlist')">Wishlist</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="controls">
+        <input
+          type="text"
+          id="search"
+          placeholder="Search by title..."
+          oninput="renderBooks()"
+        />
+        <select id="genre-filter" onchange="renderBooks()">
+          <option value="">All Genres</option>
+        </select>
+      </div>
+
+      <div id="view"></div>
+    </div>
+  </body>
 </html>
